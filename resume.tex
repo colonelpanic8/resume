@@ -1,3 +1,4 @@
+\PassOptionsToPackage{colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue}{hyperref}
 \documentclass[11pt,a4paper,sans]{moderncv}
 
 % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
@@ -5,93 +6,120 @@
 % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
 \moderncvcolor{blue}
 
-\usepackage[scale=0.85]{geometry}
+\usepackage[scale=0.88]{geometry}
 \usepackage{multicol}
 % \setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 % \setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
 % personal data
-\newcommand\colorhref[3][cyan]{\href{#2}{\small\color{#1}#3}}
+\newcommand\colorhref[3][blue]{\href{#2}{\textcolor{#1}{\underline{#3}}}}
 \name{Ivan}{Malison}
 \title{Software Engineer}
-\address{3520 20th Street, Apartment 13}{San Francisco, CA, 94110}{United States}
+\address{100 Broderick St APT 401}{San Francisco, CA 94117}{United States}
 \phone[mobile]{+1~(301) 244-8534}
 \email{ivanmalison@gmail.com}
 \social[linkedin]{ivanmalison}
-\social[github]{IvanMalison}
+\social[github]{colonelpanic8}
 \setlength{\hintscolumnwidth}{0.19\textwidth}
+
+% Render the company description (argument 6) as a dedicated subheading line.
+\renewcommand*{\cventry}[7][.25em]{%
+  \cvitem[#1]{#2}{%
+    {\bfseries#3}%
+    \ifthenelse{\equal{#4}{}}{}{, {\slshape#4}}%
+    \ifthenelse{\equal{#5}{}}{}{, #5}%
+    \strut%
+    \ifthenelse{\equal{#6}{}}{}{{\newline{}\small\itshape#6}}%
+    \ifx&#7&%
+    \else{\newline{}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi}}
+
 \begin{document}
 \makecvtitle
 
 \section{Experience}
-\cventry{2015--2016}{Software Engineer}{Uber Inc.}{San Francisco, CA}{}{Uber Everything Team
+\cventry{2023--Present}{Cofounder \& CTO}{Railbird Inc.}{San Francisco, CA}{Computer vision app for tracking pool and billiards sessions (\colorhref{https://railbird.ai}{railbird.ai})}{Engineering | Languages: Python/Rust/TypeScript
   \begin{itemize}
-  \item Author and maintainer of several Uber Eats microservices: elasticsearch based search index, order fulfilliment and billing.
-  \item Joint author of highly available, datacenter aware service/client for persistent distributed timers backed by a distributed hashring.
-  \item Built golang ODM abstraction layer for cassandra on top of \href{https://github.com/gocql/gocql}{gocql} driver.
-  \item Improved golang client libraries of custom transport protocol (\href{https://github.com/uber/tchannel-go}{tchannel-go}) with utilites for automatic request handling, crash detection, metric reporting used accross the microservices of several different teams.
+  \item Led an engineering team of up to 5 engineers, including myself.
+  \item Engineered the end-to-end computer vision pipeline, including:
+    \begin{itemize}
+    \item object and line detection models that locate table/rail geometry, detect scene changes, and map image coordinates to table-plane coordinates without a calibration step
+    \item multi-object tracking-by-detection pipeline using a mixture of custom models / cost functions for hungarian algorithm/Kalman filter based matching
+    \item shot detection and false-positive elimination
+    \item non-temporal feature extraction (distance, angle, make/miss, spin)
+    \end{itemize}
+  \item Designed a metadata-driven query builder that auto-generates selectable fields, filters, and aggregations from SQLAlchemy model annotations, and compiles GraphQL filter/aggregation trees into SQLAlchemy queries with automatic relationship joins.
+  \item Implemented a custom live video upload system; oversaw mobile engineering and contributed native iOS/Android video muxer modules and other non-UI mobile features.
+  \item Developed a custom HLS-based video playback system that overlays computer vision metadata and lets users skip through gameplay shot by shot.
+  \item Created a custom \colorhref{https://github.com/kedacore/keda}{KEDA} + \colorhref{https://github.com/colonelpanic8/hatchet}{Hatchet} video-processing autoscaling system to dynamically scale expensive processing workloads.
   \end{itemize}
 }
-\cventry{2012--2014}{Software Engineer}{Yelp Inc.}{San Francisco, CA}{}{BAM/Partnerships team
+\cventry{2019--2023}{Senior Software Engineer}{DFINITY Foundation}{San Francisco, CA}{Public blockchain that extends the internet with decentralized cloud computing}{Consensus Team | Languages: Rust/Haskell
   \begin{itemize}
-  \item Pushmaster: Deployed a new versions of Yelp's primary web applications for groups of as many as 20 other engineers on a bi-weekly basis. Also had service pushmaster privileges and performed service pushes for members of my team.
-  \item Part of a 3 person subteam that built a system for large scale data exchange relationships with partners including eat24, delivery.com and many international data providers. The system had processsed tens of millions of jobs within a few months of its completion.
-  \item Led a large refactor of Yelp's datawarehouse where it was moved from an inhouse MySQL cluster to Amazon Redshift.
+  \item Implemented the initial version of the Internet Computer's consensus validation, which manages the IC's novel BLS/random-beacon-based consensus protocol.
+  \item Led consensus-team delivery for arbitrary external HTTP calls (HTTPS outcalls), enabling canisters to securely consume data from the public internet.
+  \item Delivered the initial version of distributed key generation, coordinating deeply with the cryptography team to eventually allow canisters to hold BTC, ETH, and SOL.
+  \item As part of a two-person team, developed the initial Catch-Up Package mechanism enabling subnet membership changes, key rotation, and distributed key generation transitions.
+  \item Significant contributor to the design and implementation of the artifact pool used for artifact synchronization across nodes.
+  \end{itemize}
+}
+\cventry{2017--2019}{Intentional Career Break / Open-Source Development}{}{}{}{Rebuilt most of \colorhref{https://github.com/taffybar/taffybar}{taffybar} as maintainer (700+ GitHub stars) | Contributions to \colorhref{https://github.com/xmonad/xmonad}{xmonad} | \colorhref{https://github.com/NixOS/nixpkgs}{nixpkgs}}
+\cventry{2015--2017}{Software Engineer (Founding Uber Eats Backend Team)}{Uber Inc.}{San Francisco, CA}{}{Languages: Go/Python
+  \begin{itemize}
+  \item Built core Uber Eats backend systems from the ground up, including order management, Elasticsearch-based search, and billing; helped launch the product in its first city.
+  \item Joint author of a highly available, datacenter-aware service/client for persistent distributed timers backed by a distributed hashring.
+  \item Implemented a Golang ODM abstraction layer for Cassandra on top of the \colorhref{https://github.com/gocql/gocql}{gocql} driver.
+  \item Improved Golang client libraries for a custom transport protocol (\colorhref{https://github.com/uber/tchannel-go}{tchannel-go}) with utilities for automatic request handling, crash detection, and metric reporting used across the microservices of several different teams.
+  \end{itemize}
+}
+\cventry{2012--2014}{Software Engineer}{Yelp Inc.}{San Francisco, CA}{}{BAM/Partnerships team | Languages: Python
+  \begin{itemize}
+  \item Built a data exchange system processing tens of millions of jobs for partners including eat24, delivery.com, and international data providers.
+  \item Led migration of Yelp's data warehouse from an in-house MySQL cluster to Amazon Redshift.
+  \item Served as pushmaster for Yelp's primary web applications.
   \end{itemize}
 }
 
 \section{Education}
 \cventry{2008--2012}{Bachelor of Mathematics}{Reed College}{Portland, Oregon}{}{
-  \colorhref{https://github.com/IvanMalison/Thesis/blob/master/thesis.pdf?raw=true}{Graph Algorithms on Graphical Processing Units: The Shortest Path Problem}
+  \colorhref{https://github.com/colonelpanic8/Thesis/blob/master/thesis.pdf?raw=true}{Graph Algorithms on Graphical Processing Units: The Shortest Path Problem}
 }
-\cventry{2004--2008}{High School}{The Field School}{Washington D.C.}{}{}
 
 \section{Projects}
 
 \cvitem{haskell}{
-  \colorhref{https://github.com/taffybar/taffybar/graphs/contributors}{taffybar}
-| \colorhref{https://github.com/rblaze/haskell-dbus/pull/15}{dbus}
-| \colorhref{https://github.com/taffybar/gtk-sni-tray}{gtk-sni-tray}
-| \colorhref{https://github.com/IvanMalison/gtk-strut}{gtk-strut}
-| \colorhref{https://github.com/IvanMalison/status-notifier-item}{status-notifier-item}
-| \colorhref{https://github.com/IvanMalison/relational-algebra}{relational-algebra}
+  \colorhref{https://github.com/taffybar/taffybar}{taffybar}: primary maintainer of a broadly used status bar often paired with xmonad.
+  \newline{}\colorhref{https://github.com/rblaze/haskell-dbus/pull/15}{haskell-dbus}: added Template Haskell-based programmatic client generation for DBus interfaces.
 }
 
 \cvitem{python}{
-  \colorhref{https://github.com/kevin1024/vcrpy/graphs/contributors}{VCR.py}
-| \colorhref{https://github.com/IvanMalison/okcupyd}{okcupyd}
-| \colorhref{https://github.com/IvanMalison/chessutil}{chessutil}
-| \colorhref{https://github.com/IvanMalison/angular-chess-board}{angular-chess-board}
+  \colorhref{https://github.com/rlrml/rlrml}{rlrml} (Rocket League Replay Machine Learning): developed custom models to estimate player skill from time-series replay data.
+  \newline{}\colorhref{https://github.com/kevin1024/vcrpy/graphs/contributors}{VCR.py}: rebuilt the request interception system; became a maintainer and modernized the codebase.
+}
+
+\cvitem{rust}{
+  \colorhref{https://github.com/rlrml/subtr-actor}{subtr-actor}: high-performance replay-processing library that converts Rocket League actor-stream replay data into structured formats for analysis and ML.
+  \newline{}\colorhref{https://github.com/colonelpanic8/lastfm-edit}{lastfm-edit}
+  \newline{}\colorhref{https://github.com/colonelpanic8/scrobble-scrubber}{scrobble-scrubber}
+  \newline{}\colorhref{https://github.com/colonelpanic8/keepbook}{keepbook}
 }
 
 \cvitem{Scala}{
-  \colorhref{https://github.com/IvanMalison/DFA-Regex}{DFA-Regex}
+  \colorhref{https://github.com/colonelpanic8/DFA-Regex}{DFA-Regex}
 }
 
 \cvitem{emacs-lisp}{
-    \colorhref{https://github.com/IvanMalison/multi-line}{multi-line}
-  | \colorhref{https://github.com/IvanMalison/org-projectile}{org-projectile}
-  | \colorhref{https://github.com/IvanMalison/term-manager}{term-manager}
-  | \colorhref{https://github.com/IvanMalison/github-search}{github-search}
+    \colorhref{https://github.com/colonelpanic8/org-project-capture}{org-project-capture}
+  | \colorhref{https://github.com/colonelpanic8/org-window-habit}{org-window-habit}
+  | \colorhref{https://github.com/colonelpanic8/multi-line}{multi-line}
+  | \colorhref{https://github.com/colonelpanic8/term-manager}{term-manager}
+  | \colorhref{https://github.com/colonelpanic8/github-search}{github-search}
   | \colorhref{http://ivanmalison.github.io/dotfiles/}{literate config}
 }
 
 \cvitem{Android}{
-  \colorhref{https://github.com/orgzly/orgzly-android/pull/173}{orgzly}
+  \colorhref{https://github.com/orgzly/orgzly-android/pull/173}{orgzly}: implemented the first version of the Git synchronization system.
 }
 
-\section{Languages}
-\begin{multicols}{3}
-  haskell
-  \\scala
-  \\javascript
-  \\python
-  \\C/C++
-  \\emacs-lisp
-  \\clojure
-  \\golang
-  \\shell (bash/zsh)
-\end{multicols}
 
 \end{document}
 %%% Local Variables:
