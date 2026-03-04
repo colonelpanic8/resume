@@ -1,5 +1,5 @@
 \PassOptionsToPackage{colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue}{hyperref}
-\documentclass[11pt,a4paper,sans]{moderncv}
+\documentclass[11pt,letterpaper,sans]{moderncv}
 
 % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
 \moderncvstyle{casual}
@@ -39,14 +39,8 @@
 \section{Experience}
 \cventry{2023--Present}{Cofounder \& CTO}{Railbird Inc.}{San Francisco, CA}{Computer vision app for tracking pool and billiards sessions (\colorhref{https://railbird.ai}{railbird.ai})}{Engineering | Languages: Python/Rust/TypeScript
   \begin{itemize}
-  \item Led an engineering team of up to 5 engineers, including myself.
-  \item Engineered the end-to-end computer vision pipeline, including:
-    \begin{itemize}
-    \item object and line detection models that locate table/rail geometry, detect scene changes, and map image coordinates to table-plane coordinates without a calibration step
-    \item multi-object tracking-by-detection pipeline using a mixture of custom models / cost functions for hungarian algorithm/Kalman filter based matching
-    \item shot detection and false-positive elimination
-    \item non-temporal feature extraction (distance, angle, make/miss, spin)
-    \end{itemize}
+  \item Led a team of as many as 5 engineers.
+  \item Engineered the end-to-end computer vision pipeline: calibration-free table geometry detection, multi-object tracking via Hungarian/Kalman matching with custom cost functions, shot detection, and per-shot feature extraction (distance, angle, make/miss, spin).
   \item Designed a metadata-driven query builder that auto-generates selectable fields, filters, and aggregations from SQLAlchemy model annotations, and compiles GraphQL filter/aggregation trees into SQLAlchemy queries with automatic relationship joins.
   \item Implemented a custom live video upload system; oversaw mobile engineering and contributed native iOS/Android video muxer modules and other non-UI mobile features.
   \item Developed a custom HLS-based video playback system that overlays computer vision metadata and lets users skip through gameplay shot by shot.
@@ -59,11 +53,11 @@
   \item Led consensus-team delivery for arbitrary external HTTP calls (HTTPS outcalls), enabling canisters to securely consume data from the public internet.
   \item Delivered the initial version of distributed key generation, coordinating deeply with the cryptography team to eventually allow canisters to hold BTC, ETH, and SOL.
   \item As part of a two-person team, developed the initial Catch-Up Package mechanism enabling subnet membership changes, key rotation, and distributed key generation transitions.
-  \item Significant contributor to the design and implementation of the artifact pool used for artifact synchronization across nodes.
+  \item Co-designed and built core components of the artifact pool for cross-node synchronization, including a storage abstraction over LMDB and RocksDB and the HeightIndexedPool data structure.
   \end{itemize}
 }
-\cventry{2017--2019}{Intentional Career Break / Open-Source Development}{}{}{}{Rebuilt most of \colorhref{https://github.com/taffybar/taffybar}{taffybar} as maintainer (700+ GitHub stars) | Contributions to \colorhref{https://github.com/xmonad/xmonad}{xmonad} | \colorhref{https://github.com/NixOS/nixpkgs}{nixpkgs}}
-\cventry{2015--2017}{Software Engineer (Founding Uber Eats Backend Team)}{Uber Inc.}{San Francisco, CA}{}{Languages: Go/Python
+\cventry{2017--2019}{Open-Source Sabbatical (Travel + Linux/NixOS Focus)}{}{}{}{Rebuilt most of \colorhref{https://github.com/taffybar/taffybar}{taffybar} as primary maintainer (700+ GitHub stars) | Active contributions to \colorhref{https://github.com/xmonad/xmonad}{xmonad} | \colorhref{https://github.com/NixOS/nixpkgs}{nixpkgs}}
+\cventry{2015--2017}{Software Engineer}{Uber Inc.}{San Francisco, CA}{}{Founding Uber Eats Backend Team | Languages: Go/Python
   \begin{itemize}
   \item Built core Uber Eats backend systems from the ground up, including order management, Elasticsearch-based search, and billing; helped launch the product in its first city.
   \item Joint author of a highly available, datacenter-aware service/client for persistent distributed timers backed by a distributed hashring.
@@ -98,21 +92,12 @@
 
 \cvitem{rust}{
   \colorhref{https://github.com/rlrml/subtr-actor}{subtr-actor}: high-performance replay-processing library that converts Rocket League actor-stream replay data into structured formats for analysis and ML.
-  \newline{}\colorhref{https://github.com/colonelpanic8/lastfm-edit}{lastfm-edit}
-  \newline{}\colorhref{https://github.com/colonelpanic8/scrobble-scrubber}{scrobble-scrubber}
-  \newline{}\colorhref{https://github.com/colonelpanic8/keepbook}{keepbook}
-}
-
-\cvitem{Scala}{
-  \colorhref{https://github.com/colonelpanic8/DFA-Regex}{DFA-Regex}
 }
 
 \cvitem{emacs-lisp}{
     \colorhref{https://github.com/colonelpanic8/org-project-capture}{org-project-capture}
   | \colorhref{https://github.com/colonelpanic8/org-window-habit}{org-window-habit}
   | \colorhref{https://github.com/colonelpanic8/multi-line}{multi-line}
-  | \colorhref{https://github.com/colonelpanic8/term-manager}{term-manager}
-  | \colorhref{https://github.com/colonelpanic8/github-search}{github-search}
   | \colorhref{http://ivanmalison.github.io/dotfiles/}{literate config}
 }
 
