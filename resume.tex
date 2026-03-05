@@ -37,11 +37,11 @@
 \makecvtitle
 
 \section{Experience}
-\cventry{2023--Present}{Cofounder \& CTO}{Railbird Inc.}{San Francisco, CA}{AI-powered analytics platform for competitive billiards (\colorhref{https://railbird.ai}{railbird.ai})}{Engineering | Languages: Python/Rust/TypeScript
+\cventry{2023--Present}{Co-founder \& CTO}{Railbird Inc.}{San Francisco, CA}{AI-powered analytics platform for competitive billiards (\colorhref{https://railbird.ai}{railbird.ai})}{Engineering | Languages: Python/Rust/TypeScript
   \begin{itemize}
     \item Led a team of 5 engineers.
     \item Developed a calibration-free table geometry detection system that locates the playing surface from arbitrary camera angles without manual setup.
-    \item Built a bespoke multi-object tracking system using several custom models to robustly track small objects (billiard balls) that frequently collide with and occlude one another, requiring substantial departures from approaches found in the SOTA literature.
+    \item Built a bespoke multi-object tracking system using several custom models to robustly track small objects (billiard balls) that frequently collide with and occlude one another, requiring substantial departures from state-of-the-art methods.
     \item Designed and trained custom transformer models that processed time-series ball position data to detect shots and to segment trajectories between collisions.
     \item Designed a metadata-driven query builder that auto-generates selectable fields, filters, and aggregations from SQLAlchemy model annotations, and compiles GraphQL filter/aggregation trees into SQLAlchemy queries with automatic relationship joins.
     \item Implemented a custom lossless live video upload system; oversaw mobile engineering and contributed native iOS (Swift)/Android (Kotlin) video muxer modules.
@@ -51,23 +51,23 @@
 \cventry{2019--2023}{Senior Software Engineer}{DFINITY Foundation}{San Francisco, CA}{Public blockchain that extends the internet with decentralized cloud computing}{Consensus Team | Languages: Rust/Haskell
   \begin{itemize}
     \item Authored and maintained the state machine system that makes validation decisions and handles state transitions for the Internet Computer's novel BLS/random-beacon-based consensus protocol.
-    \item Led consensus-team delivery of external HTTP calls (HTTPS outcalls), enabling canisters to securely consume data from the public internet.
+    \item Led delivery of external HTTPS calls (HTTPS outcalls) for the consensus team, enabling canisters to securely consume data from the public internet.
     \item Delivered the initial version of distributed key generation, coordinating closely with the cryptography team to allow canisters to hold BTC, ETH, and SOL.
     \item Co-developed the initial Catch-Up Package mechanism, enabling subnet membership changes, key rotation, distributed key generation transitions, and robust recovery of temporarily unavailable nodes.
     \item Redesigned the artifact pool's indexing scheme to expose fast access patterns while abstracting away persistence details and artifact garbage collection.
   \end{itemize}
 }
-\cventry{2017--2019}{Career Break --- Travel + Open-Source Development}{}{}{}{Rebuilt most of \colorhref{https://github.com/taffybar/taffybar}{taffybar} as primary maintainer (700+ GitHub stars) | Active contributions to \colorhref{https://github.com/xmonad/xmonad}{xmonad} | \colorhref{https://github.com/NixOS/nixpkgs}{nixpkgs}}
+\cventry{2017--2019}{Career Break --- Travel + Open-Source Development}{}{}{}{Rebuilt most of \colorhref{https://github.com/taffybar/taffybar}{taffybar} as the primary maintainer (700+ GitHub stars) | Active contributions to \colorhref{https://github.com/xmonad/xmonad}{xmonad} | \colorhref{https://github.com/NixOS/nixpkgs}{nixpkgs}}
 \cventry{2015--2017}{Software Engineer}{Uber Inc.}{San Francisco, CA}{}{Founding Uber Eats Backend Team | Languages: Go/Python
   \begin{itemize}
     \item Built core Uber Eats backend systems from the ground up, including order management, Elasticsearch-based menu search, and billing.
     \item Traveled to Toronto as the primary backend engineer supporting the operational launch of Uber Eats in its first city, validating billing and payment processing in real time as orders came in.
-    \item Co-designed and implemented a highly available, datacenter-aware service and client library for persistent distributed timers backed by a distributed hashring.
-    \item Implemented a Golang ODM abstraction layer for Cassandra on top of the \colorhref{https://github.com/gocql/gocql}{gocql} driver.
-    \item Improved Golang client libraries for a custom transport protocol (\colorhref{https://github.com/uber/tchannel-go}{tchannel-go}) with utilities for automatic request handling, crash detection, and metric reporting used across multiple teams.
+    \item Co-designed and implemented a highly available, datacenter-aware service and client library for persistent distributed timers backed by a distributed hash ring.
+    \item Implemented a Go ODM abstraction layer for Cassandra on top of the \colorhref{https://github.com/gocql/gocql}{gocql} driver.
+    \item Improved Go client libraries for a custom transport protocol (\colorhref{https://github.com/uber/tchannel-go}{tchannel-go}) with utilities for automatic request handling, crash detection, and metric reporting used across multiple teams.
   \end{itemize}
 }
-\cventry{2012--2014}{Software Engineer}{Yelp Inc.}{San Francisco, CA}{}{BAM/Partnerships team | Languages: Python
+\cventry{2012--2014}{Software Engineer}{Yelp Inc.}{San Francisco, CA}{}{BAM/Partnerships Team | Languages: Python
   \begin{itemize}
     \item Developed a data exchange system processing tens of millions of jobs for partners including Eat24, Delivery.com, and international data providers.
     \item Led the migration of Yelp's data warehouse from an in-house MySQL cluster to Amazon Redshift.
@@ -103,7 +103,7 @@
 }
 
 \cvitem{Nix}{
-  Dozens of merged PRs across \colorhref{https://github.com/NixOS/nixpkgs/pulls?q=author\%3Acolonelpanic8}{nixpkgs} and \colorhref{https://github.com/nix-community/home-manager/pulls?q=author\%3Acolonelpanic8}{home-manager}: new packages [\colorhref{https://github.com/NixOS/nixpkgs/pull/43550}{1}], service modules [\colorhref{https://github.com/nix-community/home-manager/pull/2180}{2}], and bug fixes [\colorhref{https://github.com/NixOS/nixpkgs/pull/61218}{3}].
+  Dozens of merged PRs across \colorhref{https://github.com/NixOS/nixpkgs/pulls?q=author\%3Acolonelpanic8}{nixpkgs} and \colorhref{https://github.com/nix-community/home-manager/pulls?q=author\%3Acolonelpanic8}{home-manager}, including \colorhref{https://github.com/NixOS/nixpkgs/pull/43550}{new packages}, \colorhref{https://github.com/nix-community/home-manager/pull/2180}{service modules}, and \colorhref{https://github.com/NixOS/nixpkgs/pull/61218}{bug fixes}.
   \newline{}\colorhref{https://github.com/colonelpanic8/dotfiles/tree/master/nixos}{NixOS configuration}: declarative system and desktop environment management.
 }
 
@@ -128,13 +128,13 @@
     GNU/Linux               & Nix          & Kubernetes    & PostgreSQL    \\
     PyTorch                 & SQLAlchemy   & GraphQL       & Elasticsearch \\
     Cassandra               & Kafka        & GCP           & Terraform     \\
-    Containerization/Docker & React Native & gRPC/Protobuf & FFmpeg
+    Docker/Containers      & React Native & gRPC/Protobuf & FFmpeg
   \end{tabular}
 \end{center}
 
 \section{Education}
 \cventry{2008--2012}{Bachelor of Mathematics}{Reed College}{Portland, Oregon}{}{
-  \colorhref{https://github.com/colonelpanic8/Thesis/blob/master/thesis.pdf?raw=true}{Graph Algorithms on Graphical Processing Units: The Shortest Path Problem}
+  \colorhref{https://github.com/colonelpanic8/Thesis/blob/master/thesis.pdf?raw=true}{Graph Algorithms on Graphics Processing Units: The Shortest Path Problem}
 }
 
 \end{document}
