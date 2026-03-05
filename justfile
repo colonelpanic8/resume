@@ -6,6 +6,12 @@ resume_pdf := "resume.pdf"
 default:
     @just --list
 
+fmt:
+    tmp="$(mktemp --suffix=.tex)"; trap 'rm -f "$tmp"' EXIT; latexindent -l -s -c /tmp -o "$tmp" {{resume_tex}}; test -s "$tmp"; mv "$tmp" {{resume_tex}}
+
+fmt-check:
+    tmp="$(mktemp --suffix=.tex)"; trap 'rm -f "$tmp"' EXIT; latexindent -l -s -c /tmp -o "$tmp" {{resume_tex}}; diff -u {{resume_tex}} "$tmp"
+
 build:
     latexmk -pdfxe -interaction=nonstopmode -file-line-error -halt-on-error {{resume_tex}}
 
