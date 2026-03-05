@@ -1,0 +1,27 @@
+name: Nix Artifacts
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Build resume with Nix
+        run: nix build .#resume --print-build-logs
+
+      - name: Upload resume artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-${{ github.sha }}
+          path: result/resume.pdf
+          if-no-files-found: error
