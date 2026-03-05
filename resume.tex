@@ -39,10 +39,13 @@
 \section{Experience}
 \cventry{2023--Present}{Cofounder \& CTO}{Railbird Inc.}{San Francisco, CA}{AI-powered analytics platform for competitive billiards (\colorhref{https://railbird.ai}{railbird.ai})}{Engineering | Languages: Python/Rust/TypeScript
   \begin{itemize}
-  \item Led a team of as many as 5 engineers.
-  \item Engineered the end-to-end computer vision pipeline: calibration-free table geometry detection, multi-object tracking via Hungarian/Kalman matching with custom cost functions, shot detection, and per-shot feature extraction (distance, angle, make/miss, spin).
+  \item Led a team of 5 engineers.
+  \item Built a calibration-free table geometry detection system that locates the playing surface from arbitrary camera angles without manual setup.
+  \item Built a bespoke multi-object tracking system involving several custom models that robustly handled a setting involving small objects (billiard balls) that frequently collide with and occlude one another, requiring substantial departures from approaches found in the SOTA literature.
+  \item Built custom transformer models that processed the time series positional tracking data from the multi-object tracking phase both to detect shots and break ball trajectories into segments that are uninterrupted by collision
+  \item Built a system to extract per-shot non temporal features e.g. distance, angle, make/miss classification, and spin using a mix of heuristics and custom models.
   \item Designed a metadata-driven query builder that auto-generates selectable fields, filters, and aggregations from SQLAlchemy model annotations, and compiles GraphQL filter/aggregation trees into SQLAlchemy queries with automatic relationship joins.
-  \item Implemented a custom live video upload system; oversaw mobile engineering and contributed native iOS/Android video muxer modules and other non-UI mobile features.
+  \item Implemented a custom live, but lossless, video upload system; oversaw mobile engineering and contributed native iOS/Android video muxer modules and other non-UI mobile features.
   \item Developed a custom HLS-based video playback system that overlays computer vision metadata and lets users skip through gameplay shot by shot.
   \item Created a custom \colorhref{https://github.com/kedacore/keda}{KEDA} + \colorhref{https://github.com/colonelpanic8/hatchet}{Hatchet} video-processing autoscaling system to dynamically scale expensive processing workloads.
   \end{itemize}
