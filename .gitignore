@@ -2,6 +2,7 @@
 *.out
 *.aux
 *.dvi
+*.xdv
 *.synctex.gz
 *.fls
 *.log
@@ -9,3 +10,4 @@
 /_region_.tex
 /auto
 /prv_resume.fmt
+.direnv/
