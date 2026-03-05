@@ -40,21 +40,21 @@
 \cventry{2023--Present}{Cofounder \& CTO}{Railbird Inc.}{San Francisco, CA}{AI-powered analytics platform for competitive billiards (\colorhref{https://railbird.ai}{railbird.ai})}{Engineering | Languages: Python/Rust/TypeScript
   \begin{itemize}
   \item Led a team of 5 engineers.
-  \item Built a calibration-free table geometry detection system that locates the playing surface from arbitrary camera angles without manual setup.
-  \item Built a bespoke multi-object tracking system involving several custom models that robustly handled a setting involving small objects (billiard balls) that frequently collide with and occlude one another, requiring substantial departures from approaches found in the SOTA literature.
-  \item Built custom transformer models that processed the time series positional tracking data from the multi-object tracking phase both to detect shots and break ball trajectories into segments that are uninterrupted by collision.
+  \item Developed a calibration-free table geometry detection system that locates the playing surface from arbitrary camera angles without manual setup.
+  \item Built a bespoke multi-object tracking system using several custom models to robustly track small objects (billiard balls) that frequently collide with and occlude one another, requiring substantial departures from approaches found in the SOTA literature.
+  \item Designed and trained custom transformer models that processed time-series ball position data to detect shots and to segment trajectories between collisions.
   \item Designed a metadata-driven query builder that auto-generates selectable fields, filters, and aggregations from SQLAlchemy model annotations, and compiles GraphQL filter/aggregation trees into SQLAlchemy queries with automatic relationship joins.
-  \item Implemented a custom live, but lossless, video upload system; oversaw mobile engineering and contributed native iOS/Android video muxer modules and other non-UI mobile features.
+  \item Implemented a custom lossless live video upload system; oversaw mobile engineering and contributed native iOS/Android video muxer modules.
   \item Created a custom \colorhref{https://github.com/kedacore/keda}{KEDA} + \colorhref{https://github.com/colonelpanic8/hatchet}{Hatchet} video-processing autoscaling system to dynamically scale expensive processing workloads.
   \end{itemize}
 }
 \cventry{2019--2023}{Senior Software Engineer}{DFINITY Foundation}{San Francisco, CA}{Public blockchain that extends the internet with decentralized cloud computing}{Consensus Team | Languages: Rust/Haskell
   \begin{itemize}
-  \item Built and served as primary maintainer of the state machine system that makes validation decisions and handles state transitions for the Internet Computer's novel BLS/random-beacon-based consensus protocol.
-  \item Led consensus-team delivery for arbitrary external HTTP calls (HTTPS outcalls), enabling canisters to securely consume data from the public internet.
-  \item Delivered the initial version of distributed key generation, coordinating deeply with the cryptography team to eventually allow canisters to hold BTC, ETH, and SOL.
-  \item As part of a two-person team, developed the initial Catch-Up Package mechanism enabling subnet membership changes, key rotation, distributed key generation transitions, and robust recovery of temporarily unavailable nodes.
-  \item Significant artifact pool design and implementation contributor; contributions included a redesign of the indexing scheme to expose fast access patterns while abstracting away persistence details and artifact garbage collection.
+  \item Authored and maintained the state machine system that makes validation decisions and handles state transitions for the Internet Computer's novel BLS/random-beacon-based consensus protocol.
+  \item Led consensus-team delivery of external HTTP calls (HTTPS outcalls), enabling canisters to securely consume data from the public internet.
+  \item Delivered the initial version of distributed key generation, coordinating closely with the cryptography team to allow canisters to hold BTC, ETH, and SOL.
+  \item Co-developed the initial Catch-Up Package mechanism, enabling subnet membership changes, key rotation, distributed key generation transitions, and robust recovery of temporarily unavailable nodes.
+  \item Redesigned the artifact pool's indexing scheme to expose fast access patterns while abstracting away persistence details and artifact garbage collection.
   \end{itemize}
 }
 \cventry{2017--2019}{Open-Source Sabbatical (Travel + Linux/NixOS Focus)}{}{}{}{Rebuilt most of \colorhref{https://github.com/taffybar/taffybar}{taffybar} as primary maintainer (700+ GitHub stars) | Active contributions to \colorhref{https://github.com/xmonad/xmonad}{xmonad} | \colorhref{https://github.com/NixOS/nixpkgs}{nixpkgs}}
@@ -62,15 +62,15 @@
   \begin{itemize}
   \item Built core Uber Eats backend systems from the ground up, including order management, Elasticsearch-based menu search, and billing.
   \item Traveled to Toronto as the primary backend engineer supporting the operational launch of Uber Eats in its first city, validating billing and payment processing in real time as orders came in.
-  \item Joint author of a highly available, datacenter-aware service/client for persistent distributed timers backed by a distributed hashring.
+  \item Co-designed and implemented a highly available, datacenter-aware service and client library for persistent distributed timers backed by a distributed hashring.
   \item Implemented a Golang ODM abstraction layer for Cassandra on top of the \colorhref{https://github.com/gocql/gocql}{gocql} driver.
-  \item Improved Golang client libraries for a custom transport protocol (\colorhref{https://github.com/uber/tchannel-go}{tchannel-go}) with utilities for automatic request handling, crash detection, and metric reporting used across the microservices of several different teams.
+  \item Improved Golang client libraries for a custom transport protocol (\colorhref{https://github.com/uber/tchannel-go}{tchannel-go}) with utilities for automatic request handling, crash detection, and metric reporting used across multiple teams.
   \end{itemize}
 }
 \cventry{2012--2014}{Software Engineer}{Yelp Inc.}{San Francisco, CA}{}{BAM/Partnerships team | Languages: Python
   \begin{itemize}
-  \item Built a data exchange system processing tens of millions of jobs for partners including Eat24, Delivery.com, and international data providers.
-  \item Led migration of Yelp's data warehouse from an in-house MySQL cluster to Amazon Redshift.
+  \item Developed a data exchange system processing tens of millions of jobs for partners including Eat24, Delivery.com, and international data providers.
+  \item Led the migration of Yelp's data warehouse from an in-house MySQL cluster to Amazon Redshift.
   \item Served as pushmaster for Yelp's primary web applications.
   \end{itemize}
 }
